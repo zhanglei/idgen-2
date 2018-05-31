@@ -22,13 +22,13 @@ public class IdSeqFactory {
     }
 
     @Bean
-    public IdSeqService batchIdBased() {
-        return new BatchIdSeqServiceImpl();
+    public IdSeqService batchIdSingleBased() {
+        return new IdSeqBatchFetchServiceImpl(IdBizType.ORDER_ID);
     }
 
     @Bean
-    public IdSeqService batchIdSingleBased() {
-        return new IdSeqBatchFetchServiceImpl(IdBizType.ORDER_ID);
+    public IdSeqService batchIdBased() {
+        return new BatchIdSeqServiceImpl();
     }
 
     @Bean
